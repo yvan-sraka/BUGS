@@ -24,12 +24,7 @@ const fib = n => {
   return fib(n - 1) + fib(n - 2)
 }
 
-const memoized_fib = memoize(fib)
-
-for (let i = 0; i <= 100; i += 1)
-  console.log(`memoized_fib(${i}) == ${memoized_fib(i)}`)
-
-/* ************** VS ************** */
+const fib = memoize(fib)
 
 for (let i = 0; i <= 100; i += 1)
   console.log(`fib(${i}) == ${fib(i)}`)
